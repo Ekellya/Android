@@ -2,6 +2,7 @@ package com.arsakova.autum_workout_1.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,15 +25,17 @@ public class WorkDetailActivity extends AppCompatActivity {
     private SeekBar weightSeekBar;
     private EditText repsCountEditText;
     private Button saveRecordButton;
+    Workout workout;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_detail);
-        Workout workout = new Workout("Подтягивания", "Подтягивания на перекладине", 0, new Date(), 0);
+        workout = new Workout("Подтягивания", "Подтягивания на перекладине", 0, new Date(), 0);
         initGUI(workout);
         addListeners();
+        addButtonListener();
     }
 
     private void addListeners() {
@@ -40,6 +43,7 @@ public class WorkDetailActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                 weight.setText(String.valueOf(progress));
+                workout.setRecordWeight(progress);
             }
 
             @Override
@@ -50,6 +54,23 @@ public class WorkDetailActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
+    }
+
+    private void addButtonListener() {
+        saveRecordButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveRecord();
+            }
+        });
+    }
+
+    private void saveRecord() {
+        recordWeight.setText(String.valueOf(workout.getRecordWeight()));
+        String a = repsCountEditText.getText().toString();
+        int a1 = Integer.parseInt(a);
+        workout.setRecordRepsCount(a1);
+        recordRepsCount.setText(String.valueOf(workout.getRecordRepsCount()));
     }
 
     private void initGUI(Workout workout) {
