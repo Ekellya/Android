@@ -1,9 +1,0 @@
-<resources>
-    <!--<string name="app_name">autum_workout_1</string>-->
-    <string name="app_name">AutumWorkout</string>
-    <string name="date_text">Date: </string>
-    <string name="reps_count_text"> Number of repetitions: </string>
-    <string name="weight_text">Weight: </string>
-    <string name="kg">kg.</string>
-    <string name="save"> Save record </string>
-</resources>
