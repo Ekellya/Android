@@ -1,5 +1,6 @@
 package com.arsakova.autum_workout_1.activities;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,8 +14,9 @@ import com.arsakova.autum_workout_1.R;
 import com.arsakova.autum_workout_1.model.Workout;
 
 import java.util.Date;
+import java.util.Locale;
 
-public class WorkDetailActivity extends AppCompatActivity {
+public class WorkoutDetailActivity extends AppCompatActivity {
     private TextView title;
     private TextView recordDate;
     private TextView recordRepsCount;
@@ -28,9 +30,13 @@ public class WorkDetailActivity extends AppCompatActivity {
     Workout workout;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Configuration config = new Configuration();
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+
         setContentView(R.layout.activity_workout_detail);
         workout = new Workout("Подтягивания", "Подтягивания на перекладине", 0, new Date(), 0);
         initGUI(workout);
