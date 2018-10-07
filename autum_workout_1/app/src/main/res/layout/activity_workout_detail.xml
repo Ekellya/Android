@@ -13,6 +13,17 @@
         android:layout_marginRight="16dp"
         android:orientation="vertical">
 
+        <!--<Spinner-->
+            <!--android:id="@+id/spinner_for_exercises"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:entries="@array/exercise_selection"-->
+            <!--android:textSize="24sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:ellipsize="end"-->
+            <!--android:maxLines="2"-->
+            <!--/>-->
+
         <TextView
             android:id="@+id/workout_detail_title"
             android:layout_width="match_parent"
@@ -127,8 +138,8 @@
                 <TextView
                     android:id="@+id/workout_detail_weight"
                     android:layout_width="wrap_content"
-                    android:text="0"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="0" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -145,31 +156,31 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="vertical">
 
             <EditText
                 android:id="@+id/workout_detail_reps_count_edit_text"
-                android:hint="@string/reps_count_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/reps_count_text"
                 android:inputType="numberDecimal" />
         </LinearLayout>
 
         <Button
             android:id="@+id/workout_detail_save_button"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/save"
-            android:layout_height="wrap_content" />
+            android:text="@string/save" />
 
         <TextView
             android:id="@+id/workout_detail_description"
             android:layout_width="match_parent"
-            android:text="@string/workout_detail_description"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/workout_detail_description" />
 
 
     </LinearLayout>

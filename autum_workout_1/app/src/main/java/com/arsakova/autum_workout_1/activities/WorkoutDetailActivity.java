@@ -14,7 +14,6 @@ import com.arsakova.autum_workout_1.R;
 import com.arsakova.autum_workout_1.model.Workout;
 
 import java.util.Date;
-import java.util.Locale;
 
 public class WorkoutDetailActivity extends AppCompatActivity {
     private TextView title;
@@ -38,7 +37,7 @@ public class WorkoutDetailActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 
         setContentView(R.layout.activity_workout_detail);
-        workout = new Workout("Подтягивания", "Подтягивания на перекладине", 0, new Date(), 0);
+        workout = new Workout("lifting the rod", "lifting the rod in the prone position of different weights in several approaches", 0, new Date(), 0);
         initGUI(workout);
         addListeners();
         addButtonListener();
@@ -80,6 +79,7 @@ public class WorkoutDetailActivity extends AppCompatActivity {
     }
 
     private void initGUI(Workout workout) {
+
         title = findViewById(R.id.workout_detail_title);
         title.setText(workout.getTitle());
         recordDate = findViewById(R.id.workout_detail_record_date);
