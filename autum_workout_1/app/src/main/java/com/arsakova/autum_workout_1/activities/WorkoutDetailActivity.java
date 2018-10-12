@@ -72,7 +72,9 @@ public class WorkoutDetailActivity extends AppCompatActivity {
 
     private void saveRecord() {
         recordWeight.setText(String.valueOf(workout.getRecordWeight()));
-        workout.setRecordRepsCount(Integer.parseInt(repsCountEditText.getText().toString()));
+        String a = repsCountEditText.getText().toString();
+        int a1 = Integer.parseInt(a);
+        workout.setRecordRepsCount(a1);
         recordRepsCount.setText(String.valueOf(workout.getRecordRepsCount()));
     }
 
