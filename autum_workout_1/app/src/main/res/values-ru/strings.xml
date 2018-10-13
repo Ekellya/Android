@@ -1,0 +1,18 @@
+<resources>
+    <!--<string name="app_name">autum_workout_1</string>-->
+    <string name="app_name">AutumWorkout</string>
+    <string name="date_text">Дата: </string>
+    <string name="reps_count_text">Количество повторов: </string>
+    <string name="weight_text">Вес: </string>
+    <string name="kg">кг.</string>
+    <string name="save">Сохранить</string>
+    <string name="workout_detail_title">Название упражнения</string>
+    <string name="workout_detail_record">Рекорды</string>
+    <string name="workout_detail_description">Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки. Это длинный текст, для проверки прокрутки.</string>
+
+    <string name="lifting_the_rod">Жим штанги</string>
+    <string name="pull_ups">Подтягивания</string>
+    <string name="jogging">Бег трусцой</string>
+    <string name="distance">Distance</string>
+
+</resources>

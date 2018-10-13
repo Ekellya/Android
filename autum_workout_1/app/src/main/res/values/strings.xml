@@ -1,9 +1,18 @@
 <resources>
-    <!--<string name="app_name">autum_workout_1</string>-->
+
     <string name="app_name">AutumWorkout</string>
-    <string name="date_text">Дата: </string>
-    <string name="reps_count_text">Количество повторов: </string>
-    <string name="weight_text">Вес: </string>
-    <string name="kg">кг.</string>
-    <string name="save">Сохранить</string>
+    <string name="date_text">Date: </string>
+    <string name="reps_count_text"> Number of repetitions: </string>
+    <string name="weight_text">Weight: </string>
+    <string name="kg">kg.</string>
+    <string name="save"> Save record </string>
+    <string name="workout_detail_title">Exercise name </string>
+    <string name="workout_detail_record">Records </string>
+    <string name="workout_detail_description"> This is a long text to check for scrolling. This is a long text to check for scrolling. This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.</string>
+
+    <string name="lifting_the_rod">lifting the rod</string>
+    <string name="pull_ups">pull ups</string>
+    <string name="jogging">jogging</string>
+    <string name="distance">Distance</string>
+
 </resources>

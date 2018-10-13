@@ -11,6 +11,9 @@ public class Workout {
     private int recordRepsCount;
     private Date recordDate;
     private int recordWeight;
+    private int recordRepsCountLine;
+    private int recordRepsCountSum;
+
 
     public Workout(String title) {
         this.title = title;
@@ -24,7 +27,7 @@ public class Workout {
         this.recordWeight = recordWeight;
     }
 
-    public String getFormattedRecordDate(){
+    public String getFormattedRecordDate() {
         return new SimpleDateFormat("dd MMMM yyyy", Locale.ROOT).format(recordDate);
     }
 
@@ -57,6 +60,9 @@ public class Workout {
     }
 
     public void setRecordRepsCount(int recordRepsCount) {
+        if (recordRepsCount > this.recordRepsCount) {
+            this.recordRepsCount = recordRepsCount;
+        }
     }
 
     public Date getRecordDate() {
@@ -72,6 +78,8 @@ public class Workout {
     }
 
     public void setRecordWeight(int recordWeight) {
-        this.recordWeight = recordWeight;
+        if (recordWeight > this.recordWeight) {
+            this.recordWeight = recordWeight;
+        }
     }
 }
