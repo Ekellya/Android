@@ -13,5 +13,6 @@
     <string name="lifting_the_rod">Жим штанги</string>
     <string name="pull_ups">Подтягивания</string>
     <string name="jogging">Бег трусцой</string>
+    <string name="distance">Distance</string>
 
 </resources>

@@ -1,11 +1,13 @@
 package com.arsakova.autum_workout_1.activities;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -24,8 +26,8 @@ public class WorkoutDetailPullUpsActivity extends AppCompatActivity {
     private ImageView image;
     private EditText repsCountEditText;
     private Button saveRecordButton;
+    private ImageButton shareButton;
     Workout workout;
-
 
 
     @Override
@@ -48,8 +50,23 @@ public class WorkoutDetailPullUpsActivity extends AppCompatActivity {
                 saveRecord();
             }
         });
+        shareButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shareRecord();
+            }
+        });
     }
 
+    private void shareRecord() {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "Поделиться");
+        sendIntent.setType("text/plain");
+        if (sendIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(sendIntent);
+        }
+    }
 
 
     private void saveRecord() {
@@ -70,6 +87,7 @@ public class WorkoutDetailPullUpsActivity extends AppCompatActivity {
 
         repsCountEditText = findViewById(R.id.workout_detail_reps_count_edit_text);
         saveRecordButton = findViewById(R.id.workout_detail_save_button);
+        shareButton = findViewById(R.id.button_share);
     }
 }
 
