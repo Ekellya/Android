@@ -15,7 +15,8 @@ import com.arsakova.autum_workout_1.model.Workout;
 
 import java.util.Date;
 
-public class WorkoutDetailActivity extends AppCompatActivity {
+public class WorkoutDetailLiftingTheRodActivity extends AppCompatActivity {
+
     private TextView title;
     private TextView recordDate;
     private TextView recordRepsCount;
@@ -36,8 +37,8 @@ public class WorkoutDetailActivity extends AppCompatActivity {
         Configuration config = new Configuration();
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 
-        setContentView(R.layout.activity_workout_detail);
-        workout = new Workout("lifting the rod", "lifting the rod in the prone position of different weights in several approaches", 0, new Date(), 0);
+        setContentView(R.layout.activity_workout_detail_lifting_the_rod);
+        workout = new Workout("lifting the rod","ff" , 0, new Date(), 0);
         initGUI(workout);
         addListeners();
         addButtonListener();

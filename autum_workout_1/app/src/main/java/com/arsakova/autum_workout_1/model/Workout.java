@@ -11,6 +11,9 @@ public class Workout {
     private int recordRepsCount;
     private Date recordDate;
     private int recordWeight;
+    private int recordRepsCountLine;
+    private int recordRepsCountSum;
+
 
     public Workout(String title) {
         this.title = title;

@@ -9,13 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.WorkoutDetailActivity">
+
+        <activity android:name=".activities.WorkoutListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.WorkoutDetailLiftingTheRodActivity"
+            android:parentActivityName=".activities.WorkoutListActivity"></activity>
+        <activity
+            android:name=".activities.WorkoutDetailPullUpsActivity"
+            android:parentActivityName=".activities.WorkoutListActivity"></activity>
+        <activity
+            android:name=".activities.WorkoutDetailJoggingActivity"
+            android:parentActivityName=".activities.WorkoutListActivity"></activity>
     </application>
 
 </manifest>
