@@ -22,7 +22,8 @@
             android:parentActivityName=".activities.WorkoutListActivity"></activity>
         <activity
             android:name=".activities.WorkoutDetailPullUpsActivity"
-            android:parentActivityName=".activities.WorkoutListActivity"></activity>
+            android:parentActivityName=".activities.WorkoutListActivity"
+            android:configChanges="orientation|screenSize"></activity>
         <activity
             android:name=".activities.WorkoutDetailJoggingActivity"
             android:parentActivityName=".activities.WorkoutListActivity"></activity>
