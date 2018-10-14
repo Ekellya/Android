@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,7 @@ import java.util.Date;
 
 public class WorkoutDetailLiftingTheRodActivity extends AppCompatActivity {
 
+    public static final String TAG = "LiftingTheRodActivity";
     private TextView title;
     private TextView recordDate;
     private TextView recordRepsCount;
@@ -44,7 +46,61 @@ public class WorkoutDetailLiftingTheRodActivity extends AppCompatActivity {
         workout = new Workout("lifting the rod","ff" , 0, new Date(), 0);
         initGUI(workout);
         addListeners();
+        Log.d(TAG, "Вызван onCreate()");
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "Вызван onStart()");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("recordDate", String.valueOf(workout.getFormattedRecordDate()));
+        outState.putString("recordWeight", String.valueOf(workout.getRecordWeight()));
+        outState.putString("recordRepsCount", String.valueOf(workout.getRecordWeight()));
+        Log.d(TAG, "Вызван onSaveInstanceState");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "Вызван onResume()");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        recordDate.setText(String.valueOf(savedInstanceState.getString("recordDate")));
+        recordWeight.setText(savedInstanceState.getString("recordWeight"));
+        recordRepsCount.setText(String.valueOf(savedInstanceState.getString("recordRepsCount")));
+        Log.d(TAG, "Вызван onRestoreInstanceState");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "Вызван onPause()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "Вызван onStop()");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "Вызван onRestart()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "Вызван onDestroy()");
     }
 
     private void addListeners() {
