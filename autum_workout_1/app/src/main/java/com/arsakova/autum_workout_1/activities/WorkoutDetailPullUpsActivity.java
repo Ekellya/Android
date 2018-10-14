@@ -39,7 +39,7 @@ public class WorkoutDetailPullUpsActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 
         setContentView(R.layout.activity_workout_detail_pull_ups);
-        workout = new Workout("Pull ups", "x", 0, new Date(), 0);
+        workout = new Workout("Pull ups", "x", 0, new Date());
         initGUI(workout);
         addListeners();
         Log.d(TAG, "Вызван onCreate()");
