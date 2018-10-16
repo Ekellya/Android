@@ -11,9 +11,21 @@ public class Workout {
     private int recordRepsCount;
     private Date recordDate;
     private int recordWeight;
+    private int recordRepsCountLine;
+    private int recordRepsCountSum;
+    private int recordDistance;
+    private int recordTime;
+
 
     public Workout(String title) {
         this.title = title;
+    }
+
+    public Workout(String title, String description, int recordRepsCount, Date recordDate) {
+        this.title = title;
+        this.description = description;
+        this.recordRepsCount = recordRepsCount;
+        this.recordDate = recordDate;
     }
 
     public Workout(String title, String description, int recordRepsCount, Date recordDate, int recordWeight) {
@@ -79,4 +91,37 @@ public class Workout {
             this.recordWeight = recordWeight;
         }
     }
+
+    public int getRecordRepsCountLine() {
+        return recordRepsCountLine;
+    }
+
+    public void setRecordRepsCountLine(int recordRepsCountLine) {
+        this.recordRepsCountLine = recordRepsCountLine;
+    }
+
+    public int getRecordRepsCountSum() {
+        return recordRepsCountSum;
+    }
+
+    public void setRecordRepsCountSum(int recordRepsCountSum) {
+        this.recordRepsCountSum = recordRepsCountSum;
+    }
+
+    public int getRecordDistance() {
+        return recordDistance;
+    }
+
+    public void setRecordDistance(int recordDistance) {
+        this.recordDistance = recordDistance;
+    }
+
+    public int getRecordTime() {
+        return recordTime;
+    }
+
+    public void setRecordTime(int recordTime) {
+        this.recordTime = recordTime;
+    }
+
 }

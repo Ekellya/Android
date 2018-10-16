@@ -10,18 +10,11 @@
     <string name="workout_detail_record">Records </string>
     <string name="workout_detail_description"> This is a long text to check for scrolling. This is a long text to check for scrolling. This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.This is a long text to check for scrolling.</string>
 
-
-    <!--<string-array name="exercise_selection">-->
-        <!--<item name="exercise_pull-ups">pull-ups</item>-->
-        <!--<item name="exercise_lift barbell">lift barbell</item>-->
-
-    <!--</string-array>-->
-
-    <!--<string-array name="exercise_description">-->
-        <!--<item name="exercise_pull-ups_description">pull-ups on the bar</item>-->
-        <!--<item name="exercise_lift barbell_description">lifting the rod in the prone position of different weights in several approaches </item>-->
-
-    <!--</string-array>-->
-
+    <string name="lifting_the_rod">lifting the rod</string>
+    <string name="pull_ups">pull ups</string>
+    <string name="jogging">jogging</string>
+    <string name="record_distance">Record distance: </string>
+    <string name="distance_text">Distance (meter)</string>
+    <string name="meter">meter</string>
 
 </resources>
