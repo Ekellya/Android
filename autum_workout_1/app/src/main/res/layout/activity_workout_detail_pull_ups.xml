@@ -117,8 +117,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/workout_detail_description" />
-
-
 </LinearLayout>
-
     </ScrollView>

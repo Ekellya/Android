@@ -73,7 +73,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/distance" />
+                android:text="@string/record_distance" />
 
             <TextView
                 android:id="@+id/workout_detail_record_distance"
@@ -81,6 +81,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:text="123" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@string/meter" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,7 +99,7 @@
                 android:id="@+id/workout_detail_distance_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/distance"
+                android:hint="@string/distance_text"
                 android:inputType="numberDecimal" />
         </LinearLayout>
 
@@ -116,8 +122,5 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/workout_detail_description" />
-
-
     </LinearLayout>
-
 </ScrollView>
