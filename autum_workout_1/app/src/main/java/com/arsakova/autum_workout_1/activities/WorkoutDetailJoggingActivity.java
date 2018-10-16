@@ -23,14 +23,13 @@ public class WorkoutDetailJoggingActivity extends AppCompatActivity {
     public static final String TAG = "JoggingActivity";
     private TextView title;
     private TextView recordDate;
+    private TextView recordDistance;
     private TextView description;
     private ImageView image;
-//    private EditText repsCountEditText;
+    private EditText distanceEditText;
     private Button saveRecordButton;
     private ImageButton shareButton;
     Workout workout;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +97,6 @@ public class WorkoutDetailJoggingActivity extends AppCompatActivity {
         shareButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "Поделиться");
@@ -109,16 +107,12 @@ public class WorkoutDetailJoggingActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
-
-
 
     private void saveRecord() {
 
-//        workout.setRecordRepsCount(Integer.parseInt(repsCountEditText.getText().toString()));
-//        recordRepsCount.setText(String.valueOf(workout.getRecordRepsCount()));
+        workout.setRecordDistance(Integer.parseInt(distanceEditText.getText().toString()));
+        recordDistance.setText(String.valueOf(workout.getRecordRepsCount()));
     }
 
     private void initGUI(Workout workout) {
@@ -129,15 +123,14 @@ public class WorkoutDetailJoggingActivity extends AppCompatActivity {
         recordDate.setText(workout.getFormattedRecordDate());
         description = findViewById(R.id.workout_detail_description);
         description.setText(workout.getDescription());
+        recordDistance = findViewById(R.id.workout_detail_record_distance);
+        recordDistance.setText(workout.getRecordDistance());
 
-//        repsCountEditText = findViewById(R.id.workout_detail_reps_count_edit_text);
+        distanceEditText = findViewById(R.id.workout_detail_distance_edit_text);
         saveRecordButton = findViewById(R.id.workout_detail_save_button);
         shareButton = findViewById(R.id.button_share);
     }
-
 }
 
-
-// добавить переменную расстояние и время
+// добавить переменную время
 // информативно выводить среднюю скорость
-//

@@ -13,6 +13,8 @@
     <string name="lifting_the_rod">Жим штанги</string>
     <string name="pull_ups">Подтягивания</string>
     <string name="jogging">Бег трусцой</string>
-    <string name="distance">Distance</string>
+    <string name="record_distance">Рекордная дистанция: </string>
+    <string name="distance_text">Введите длину дистанции в метрах</string>
+    <string name="meter">метр(а/ов)</string>
 
 </resources>
