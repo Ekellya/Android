@@ -19,8 +19,10 @@ public class WorkoutListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_workout_list);
-        initGUI();
+        setContentView(R.layout.activity_workout_list_item);
+
+//        setContentView(R.layout.activity_workout_list);
+//        initGUI();
         Log.d(TAG, "Вызван onCreate()");
     }
 

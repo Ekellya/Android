@@ -17,4 +17,6 @@
     <string name="distance_text">Distance (meter)</string>
     <string name="meter">meter</string>
 
+    <string name="title_mock_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, culpa dignissimos doloribus est explicabo fuga labore nisi repudiandae voluptate voluptatem.</string>
+    <string name="description_mock_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem culpa doloribus earum enim, error exercitationem fugiat in ipsum iusto minus neque non obcaecati pariatur perspiciatis quaerat quas qui saepe sed similique sunt ullam!</string>
 </resources>
