@@ -1,11 +1,13 @@
-package com.arsakova.autum_workout_1.activities;
+package com.arsakova.autum_workout_1.fragments;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -15,10 +17,12 @@ import android.widget.TextView;
 import com.arsakova.autum_workout_1.R;
 import com.arsakova.autum_workout_1.model.Workout;
 import com.arsakova.autum_workout_1.model.WorkoutList;
+import com.squareup.picasso.Picasso;
 
-public class WorkoutDetailActivity extends AppCompatActivity {
+public class WorkoutDetailFragment extends Fragment {
 
         public static final String TAG = "DetailActivity";
+        private static final String WORKOUT_INDEX = "workoutIndex";
         private TextView title;
         private TextView recordDate;
         private TextView recordRepsCount;
@@ -31,17 +35,27 @@ public class WorkoutDetailActivity extends AppCompatActivity {
         private Button saveRecordButton;
         private ImageButton shareButton;
 
+        public static WorkoutDetailFragment initFragment(int workoutIndex){
+            WorkoutDetailFragment fragment = new WorkoutDetailFragment();
+            Bundle arguments = new Bundle();
+            arguments.putInt(WORKOUT_INDEX, workoutIndex);
+            fragment.setArguments(arguments);
+            return fragment;
+        }
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_workout_detail, container, false);
+        Workout workout = WorkoutList.getInstance().getWorkouts().get( getArguments().getInt(WORKOUT_INDEX));
+        initGUI(root, workout);
+        addListeners(workout);
+        return root;
+    }
+
+    @Override
+        public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            Configuration config = new Configuration();
-            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-            setContentView(R.layout.activity_workout_detail);
-            Workout workout = WorkoutList.getInstance().getWorkouts().get(getIntent().getIntExtra("workout_index",0));
-            initGUI(workout);
-            addListeners(workout);
-            Log.d(TAG, "Вызван onCreate()");
         }
 
     private void addListeners(final Workout workout) {
@@ -75,29 +89,31 @@ public class WorkoutDetailActivity extends AppCompatActivity {
                     sendIntent.setAction(Intent.ACTION_SEND);
                     sendIntent.putExtra(Intent.EXTRA_TEXT, "Поделиться");
                     sendIntent.setType("text/plain");
-                    if(sendIntent.resolveActivity(getPackageManager()) != null){
+                    if(sendIntent.resolveActivity(getActivity().getPackageManager()) != null){
                         startActivity(sendIntent);
                     }
                 }
             });
         }
 
-        private void initGUI(Workout workout) {
-            title = findViewById(R.id.workout_detail_title);
+        private void initGUI(View view, Workout workout) {
+            title = view.findViewById(R.id.workout_detail_title);
             title.setText(workout.getTitle());
-            recordDate = findViewById(R.id.workout_detail_record_date);
+            recordDate = view.findViewById(R.id.workout_detail_record_date);
             recordDate.setText(workout.getFormattedRecordDate());
-            recordRepsCount = findViewById(R.id.workout_detail_record_reps_count);
+            recordRepsCount = view.findViewById(R.id.workout_detail_record_reps_count);
             recordRepsCount.setText(String.valueOf(workout.getRecordRepsCount()));
-            recordWeight = findViewById(R.id.workout_detail_record_weight);
+            recordWeight = view.findViewById(R.id.workout_detail_record_weight);
             recordWeight.setText(String.valueOf(workout.getRecordWeight()));
-            description = findViewById(R.id.workout_detail_description);
+            description = view.findViewById(R.id.workout_detail_description);
             description.setText(workout.getDescription());
-            weight = findViewById(R.id.workout_detail_weight);
-            weightSeekBar = findViewById(R.id.workout_detail_weight_seek_bar);
-            repsCountEditText = findViewById(R.id.workout_detail_reps_count_edit_text);
-            saveRecordButton = findViewById(R.id.workout_detail_save_button);
-            shareButton = findViewById(R.id.button_share);
+            weight = view.findViewById(R.id.workout_detail_weight);
+            weightSeekBar = view.findViewById(R.id.workout_detail_weight_seek_bar);
+            repsCountEditText = view.findViewById(R.id.workout_detail_reps_count_edit_text);
+            saveRecordButton = view.findViewById(R.id.workout_detail_save_button);
+            shareButton = view.findViewById(R.id.button_share);
+            image = view.findViewById(R.id.workout_detail_image_view);
+            Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(image);
         }
     }
 
